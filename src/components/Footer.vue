@@ -41,8 +41,8 @@
 
       <!-- Right: Links -->
       <div class="z-10 space-x-4">
-        <a href="/tos" class="hover:text-white transition">Terms of Service</a>
-        <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
+        <RouterLink to="/terms-of-service" class="hover:text-white transition">Terms of Service</RouterLink>
+        <RouterLink to="/privacy-policy" class="hover:text-white transition">Privacy Policy</RouterLink>
       </div>
     </div>
   </footer>
