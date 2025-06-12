@@ -1,0 +1,11 @@
+@import './base.css';
+
+#app-main {
+  background-image: url('@/assets/images/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+}
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
