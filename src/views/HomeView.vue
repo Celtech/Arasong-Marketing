@@ -11,7 +11,7 @@ async function handleSubmit() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ emailAddy }),
+      body: JSON.stringify({ email: emailAddy }),
     });
 
     const data = await res.json();
