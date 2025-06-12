@@ -5,13 +5,13 @@ const email = ref('');
 
 async function handleSubmit() {
   try {
-    console.log(email.value);
+    const emailAddy = email.value;
     const res = await fetch('/api/mailer/route', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ emailAddy }),
     });
 
     const data = await res.json();
