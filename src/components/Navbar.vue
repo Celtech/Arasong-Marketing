@@ -8,9 +8,9 @@
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="/" aria-label="Arasong Home">
-            <img src="@/assets/images/Logo_no_wordmark.png" alt="Arasong Logo" class="h-12 w-auto drop-shadow-lg" />
-          </a>
+            <RouterLink class="hover:text-blue-800 transition" to="/">
+              <img src="@/assets/images/Logo_no_wordmark.png" alt="Arasong Logo" class="h-12 w-auto drop-shadow-lg" />
+            </RouterLink>
         </div>
 
         <!-- Navigation Links -->
