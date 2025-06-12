@@ -1,5 +1,29 @@
 <script setup>
+import { ref } from 'vue';
 
+const email = ref('');
+
+async function handleSubmit() {
+  try {
+    const res = await fetch('/api/mailer/route', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Subscription failed');
+    }
+
+    return { success: true, data };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+}
 </script>
 
 <template>
@@ -15,7 +39,7 @@
       </p>
 
       <!-- Signup form -->
-      <form class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <form @submit.prevent="handleSubmit" class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <input
             type="email"
             placeholder="Your email address"
