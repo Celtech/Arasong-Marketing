@@ -5,6 +5,7 @@ const email = ref('');
 
 async function handleSubmit() {
   try {
+    console.log(email.value);
     const res = await fetch('/api/mailer/route', {
       method: 'POST',
       headers: {
