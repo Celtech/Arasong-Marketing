@@ -15,10 +15,8 @@
 
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
-          <a href="#" class="hover:text-blue-800 transition">Home</a>
-          <a href="#" class="hover:text-blue-800 transition">About</a>
-          <a href="#" class="hover:text-blue-800 transition">Features</a>
-          <a href="#" class="hover:text-blue-800 transition">Contact</a>
+          <RouterLink class="hover:text-blue-800 transition" to="/">Home</RouterLink>
+          <RouterLink class="hover:text-blue-800 transition" to="/about">About</RouterLink>
         </div>
       </div>
     </div>
