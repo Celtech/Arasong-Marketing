@@ -2,9 +2,12 @@
 import { ref } from 'vue';
 
 const email = ref('');
+const loading = ref(false);
+const submitted = ref(false);
 
 async function handleSubmit() {
   try {
+    loading.value = true;
     const emailAddy = email.value;
     const res = await fetch('/api/mailer/route', {
       method: 'POST',
@@ -17,11 +20,15 @@ async function handleSubmit() {
     const data = await res.json();
 
     if (!res.ok) {
+      loading.value = false;
       throw new Error(data.error || 'Subscription failed');
+    }else{
+      submitted.value = true;
     }
 
     return { success: true, data };
   } catch (error) {
+    loading.value = false;
     return { success: false, error: error.message };
   }
 }
@@ -40,7 +47,7 @@ async function handleSubmit() {
       </p>
 
       <!-- Signup form -->
-      <form @submit.prevent="handleSubmit" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <form @submit.prevent="handleSubmit" class="flex flex-col sm:flex-row items-center justify-center gap-4" v-if="!submitted">
         <input
             type="email"
             placeholder="Your email address"
@@ -50,11 +57,16 @@ async function handleSubmit() {
         />
         <button
             type="submit"
-            class="bg-blue-800 w-full sm:w-auto hover:bg-blue-900 transition px-6 py-3 rounded-md font-semibold shadow-lg"
+            class="bg-blue-800 w-full sm:w-auto hover:bg-blue-900 transition px-6 py-3 rounded-md font-semibold shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
+            :disabled="loading"
         >
           Join the Playtest
         </button>
       </form>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4" v-else>
+        You're signed up, we'll be in touch soon!
+      </div>
 
       <!-- Footer note -->
       <p class="text-sm text-gray-400 mt-4 italic">
