@@ -28,9 +28,9 @@
       <!-- Member 2 -->
       <div class="text-center">
         <picture>
-          <source srcset="@/assets/images/headshots/blank-avatar.avif" type="image/avif" />
-          <source srcset="@/assets/images/headshots/blank-avatar.webp" type="image/webp" />
-          <img src="@/assets/images/headshots/blank-avatar.jpg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary shadow-md" />
+          <source srcset="@/assets/images/headshots/Sheldon2.avif" type="image/avif" />
+          <source srcset="@/assets/images/headshots/Sheldon2.webp" type="image/webp" />
+          <img src="@/assets/images/headshots/Sheldon2.jpg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary shadow-md" />
         </picture>
         <h3 class="text-xl font-semibold">Sheldon Jorgenson</h3>
         <p class="text-primary mb-2">Co-Founder & Game Designer</p>

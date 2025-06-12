@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nav class="bg-black bg-opacity-50 backdrop-blur-sm fixed w-full z-20 top-0 left-0">
+  <nav class="bg-black/50 backdrop-blur-sm fixed w-full z-20 top-0 left-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
