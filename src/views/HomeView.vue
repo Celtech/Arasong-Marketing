@@ -43,6 +43,7 @@ async function handleSubmit() {
         <input
             type="email"
             placeholder="Your email address"
+            v-model="email"
             required
             class="px-4 py-3 w-full md:w-80 sm:w-auto rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-800 bg-white"
         />
